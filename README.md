@@ -1,13 +1,15 @@
+# User Mode Thread Library without Thread Synchronization or Thread Safety
+A more advanced version of this is here: https://github.com/edwardyuendev/thread_library_with_threadsync
+
+The application is intended to serve as a library that implemented a basic thread system for Linux. These threads run virtually in parallel in the same address space of a single process but each with its own context consisting of CPU registers and a stack.
+
+The implementation is essentially my own implementations of core functions from pthread.h, where I wrote function implementations from scratch. I designed the underlying data structures to keep track of threads with a Thread Control Block, a data structure to store the blocks and a scheduler that pre-emptively switches between threads.
+
 # The Goals of this Project were to:
 1. understand the idea of threads
 2. implement independent, parallel execution within a single process
 3. understand alarms and signals within Linux
 4. improve proficiency with the C++ language
-
-# User Mode Thread Library Description
-The application is intended to serve as a library that implemented a basic thread system for Linux. These threads run virtually in parallel in the same address space of a single process but each with its own context consisting of CPU registers and a stack.
-
-The implementation is essentially my own implementations of core functions from pthread.h, where I wrote function implementations from scratch. I designed the underlying data structures to keep track of threads with a Thread Control Block, a data structure to store the blocks and a scheduler that pre-emptively switches between threads.
 
 # Functions implemented
 - pthread_create()
